@@ -18,6 +18,7 @@ export const Forms = () => {
         toast.error(errors);
       })
       .finally(() => toast.success("yaxshi bo'ldi"));
+    reset();
   };
   return (
     <form
@@ -26,7 +27,7 @@ export const Forms = () => {
     >
       <input
         className="bg-input p-input rounded-[33px] "
-        {...register("name", { required: true }, { reset: true })}
+        {...register("name", { required: true })}
         type="text"
       />
       <button

@@ -12,9 +12,14 @@ export const Card = ({ id, name }) => {
       })
       .finally(() => toast.info("deleted"));
   };
-
+  // toast.error("ishlatomadim")
   const editItem = () => {
-    toast.error("ishlatomadim");
+    let newNAme = prompt(" ", name);
+    axios
+      .patch(`http://localhost:3600/user/${id}`, { name: newNAme })
+      .finally(() => {
+        toast.error("edited");
+      });
   };
   return (
     <>
